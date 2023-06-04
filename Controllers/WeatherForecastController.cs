@@ -27,7 +27,8 @@ public class WeatherForecastController : ControllerBase
         _logger = logger;
     }
 
-    [HttpGet(Name = "GetWeatherForecast")]
+    [Route("GetWeatherForecast")]
+    [HttpGet]
     public MySmartList<WeatherForecast> GetWeatherForecast()
     {
         MySmartList<WeatherForecast> result = new MySmartList<WeatherForecast>(); 
@@ -42,28 +43,28 @@ public class WeatherForecastController : ControllerBase
         return result;
     }
 
-    //[Route("GetNumbers")]
-    //[HttpGet(Name = "GetNumbers")]
-    //public MySmartList<int> GetNumbers()
-    //{
-    //    MySmartList<int> result = new MySmartList<int>();
-    //    for (int i = 0; i < 10; i++)
-    //    {
-    //        result.data.Add(i);
-    //    }
-    //    return result;
-    //}
+    [Route("GetNumbers")]
+    [HttpGet]
+    public MySmartList<int> GetNumbers()
+    {
+        MySmartList<int> result = new MySmartList<int>();
+        for (int i = 0; i < 10; i++)
+        {
+            result.data.Add(i);
+        }
+        return result;
+    }
 
-    //[Route("GetStrings")]
-    //[HttpGet(Name = "GetStrings")]
-    //public MySmartList<string> GetStrings()
-    //{
-    //    MySmartList<string> result = new MySmartList<string>();
-    //    for (int i = 0; i < 10; i++)
-    //    {
-    //        result.data.Add(new Guid().ToString());
-    //    }
-    //    return result;
-    //}
+    [Route("GetStrings")]
+    [HttpGet]
+    public MySmartList<string> GetStrings()
+    {
+        MySmartList<string> result = new MySmartList<string>();
+        for (int i = 0; i < 10; i++)
+        {
+            result.data.Add(new Guid().ToString());
+        }
+        return result;
+    }
 
 }
